@@ -1,6 +1,7 @@
 import { requestApiconsultaSerClienteNew } from "/services/consultaSerClienteNew";
 Page({
   data: {
+    Doc:"NN",
     redirectServices:"redirectBackServices",
     descriptionError:"se presentó un error ,intente más tarde.",
     modalVisibleError:false,
@@ -25,6 +26,15 @@ Page({
   //categoria2 es todo referente a Internet
   //categoria3 es todo referente a Television
   onLoad() {
+    if(getApp().globalData.DocumentType==1){
+      this.setData({
+        Doc:"CC",
+      })
+    }else if(getApp().globalData.DocumentType==2){
+      this.setData({
+        Doc:"Nit",
+      })
+    }
     this.showLoading();
     requestApiconsultaSerClienteNew(this.data.urlApiconsultaSerClienteNew, this)
       .then(res => {
