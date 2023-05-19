@@ -5,7 +5,8 @@
     "pages/Packages/Packages",
     "pages/addProduct/addProduct",
     "pages/MyProducts/redirect/redirect",
-    "pages/MyProducts/ActivatePhone/ActivatePhone"
+    "pages/MyProducts/ActivatePhone/ActivatePhone",
+    "pages/test/test"
   ],
   "window": {
     "defaultTitle": "Mis productos",

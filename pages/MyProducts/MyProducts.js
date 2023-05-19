@@ -1,6 +1,9 @@
 import { requestApiconsultaSerClienteNew } from "/services/consultaSerClienteNew";
 Page({
   data: {
+    redirectServices:"redirectBackServices",
+    descriptionError:"se presentó un error ,intente más tarde.",
+    modalVisibleError:false,
     showLoading: false,
     name: getApp().globalData.nombre,
     nit: getApp().globalData.DocumentNumber,
@@ -31,8 +34,11 @@ Page({
           res.data &&
           res.data.error == 0 &&
           res.data.response &&
-          res.data.response.servicioActual
+          res.data.response.servicioActual&&
+          !res.data.response.mensajeRespuesta.includes("Error")&&
+          !res.data.response.mensajeRespuesta.includes("La cuenta No Existe")
         ) {
+          console.log("entro")
           const servicioActual = res.data.response.servicioActual;
           const categoria1 = servicioActual.filter(
             item => item.categoria === "1"
@@ -79,10 +85,9 @@ Page({
           }
           
         } else {
-          my.alert({
-            content: "se presentó un error ,intente más tarde.",
-            buttonText: "Cerrar"
-          });
+          this.setData({
+            modalVisibleError:true
+          })
         }
 
         this.hideLoading();
@@ -93,6 +98,9 @@ Page({
         my.hideLoading({
           page: this
         });
+        this.setData({
+          modalVisibleError:true
+        })
         my.alert({
           content: error,
           buttonText: "Cerrar"
@@ -165,5 +173,12 @@ Page({
     this.setData({
       showLoading: false
     });
-  }
+  },
+  //cuando se integre arreglar ruta
+  redirectBackServices() {
+    console.log("clic")
+    my.reLaunch({
+      url: '/pages/MyProducts/MyProducts'
+    })
+  },
 });
