@@ -22,7 +22,7 @@
   </view>
 </view>
 <view class="text-paquete">
-  paquete
+  Paquete
 </view>
 <view a:for="{{categoriaList}}" a:for-index="index" a:for-item="item" class="container-package">
 

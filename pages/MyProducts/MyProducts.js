@@ -2,56 +2,89 @@ import { requestApiconsultaSerClienteNew } from "/services/consultaSerClienteNew
 Page({
   data: {
     showLoading: false,
-    name:getApp().globalData.nombre,
-    nit:getApp().globalData.DocumentNumber,
-    numberAccount:getApp().globalData.NumberAccount,
-    modalVisible:false,
-    categoria3:[],
-    isPhonePlan:false,
-    isInternetPlan:false,
-    isTvPlan:false,
+    name: getApp().globalData.nombre,
+    nit: getApp().globalData.DocumentNumber,
+    numberAccount: getApp().globalData.NumberAccount,
+    modalVisible: false,
+    categoria3: [],
+    isPhonePlan: false,
+    isInternetPlan: false,
+    isTvPlan: false,
     DescripctionPlanInternet: "0 MB",
     DescripctionPlanPhone: "Telefonia",
-    "msgEmptytelefonia":"Actualmente no cuentas con este servicio",
-    "msgEmptyTv":"Actualmente no cuentas con este servicio",
+    msgEmptytelefonia: "Actualmente no cuentas con este servicio",
+    msgEmptyTv: "Actualmente no cuentas con este servicio",
     DescripctionPlantv: [],
     urlApiconsultaSerClienteNew:
       "https://apiselfservice.co/api/index.php/v1/soap/consultaSerClienteNew.json"
   },
+  //categoria1 es todo referente a telefonia 
+  //categoria2 es todo referente a Internet
+  //categoria3 es todo referente a Television
   onLoad() {
     this.showLoading();
     requestApiconsultaSerClienteNew(this.data.urlApiconsultaSerClienteNew, this)
       .then(res => {
-        console.log("succes--->", res.data.response);
-        const servicioActual = res.data.response.servicioActual;
-        const categoria1 = servicioActual.filter(
-          item => item.categoria === "1"
-        );
-        const categoria2 = servicioActual.filter(
-          item => item.categoria === "2"
-        );
-        const categoria3 = servicioActual.filter(
-          item => item.categoria === "3"
-        );
-        const categoria2primerValor = servicioActual.find(item => item.categoria === "2");
-        const primerosValoresCategoria3 = categoria3.slice(0, 2).map(item => item.descripcion);
-        const primerValorCategoria2 = categoria2primerValor ? categoria2primerValor.descripcion : null;
+        console.log("succes--->", res.data);
+        if (
+          res &&
+          res.data &&
+          res.data.error == 0 &&
+          res.data.response &&
+          res.data.response.servicioActual
+        ) {
+          const servicioActual = res.data.response.servicioActual;
+          const categoria1 = servicioActual.filter(
+            item => item.categoria === "1"
+          );
+          const categoria2 = servicioActual.filter(
+            item => item.categoria === "2"
+          );
+          const categoria3 = servicioActual.filter(
+            item => item.categoria === "3"
+          );
+          if (categoria1 && categoria1 !== null && categoria1 !== undefined && categoria1.length > 0) {
+            this.setData({
+              isPhonePlan: true,
+              DescripctionPlanPhone: categoria1[0].descripcion
+            });
+          }
+          if (categoria2 && categoria2 !== null && categoria2 !== undefined&&categoria2.length > 1) {
+            const categoria2primerValor = servicioActual.find(
+              item => item.categoria === "2"
+            );
+            const primerValorCategoria2 = categoria2primerValor
+              ? categoria2primerValor.descripcion
+              : null;
 
-        console.log("Primeros valores de la categoría 3:", primerosValoresCategoria3);
-        this.setData({
-          isTvPlan:true,
-          DescripctionPlantv:primerosValoresCategoria3,
-          categoria3:categoria3
-        })
-        // Imprimir el primer valor de la categoría 2 en la consola
-        console.log("Primer valor de la categoría 2:", primerValorCategoria2);
-        this.setData({
-          DescripctionPlanInternet:primerValorCategoria2
-        })
-        this.setData({
-          isPhonePlan:true,
-          DescripctionPlanPhone:categoria1[0].descripcion
-        })
+            this.setData({
+              DescripctionPlanInternet: primerValorCategoria2
+            });
+          }
+          if (categoria3 && categoria3 !== null &&categoria3 !== undefined&& categoria3.length > 0) {
+            let primerosValoresCategoria3 = [];
+            if ( categoria3.length >= 2) {
+            primerosValoresCategoria3 = categoria3
+              .slice(0, 2)
+              .map(item => item.descripcion);
+            }else{
+              primerosValoresCategoria3 = categoria3
+              .map(item => item.descripcion);
+            }
+            this.setData({
+              isTvPlan: true,
+              DescripctionPlantv: primerosValoresCategoria3,
+              categoria3: categoria3
+            });
+          }
+          
+        } else {
+          my.alert({
+            content: "se presentó un error ,intente más tarde.",
+            buttonText: "Cerrar"
+          });
+        }
+
         this.hideLoading();
       })
       .catch(error => {
@@ -66,25 +99,27 @@ Page({
         });
       });
   },
-  redirectPaquetesContratados(){
+  redirectPaquetesContratados() {
     my.navigateTo({
-      url: "/pages/Packages/Packages?categoria=" + JSON.stringify(this.data.categoria3)
+      url:
+        "/pages/Packages/Packages?categoria=" +
+        JSON.stringify(this.data.categoria3)
     });
   },
   handleClose() {
     this.setData({
       modalVisible: false,
-      modalVisiblePhoneActivate:false,
-      modalVisiblePhonePlayStore:false
+      modalVisiblePhoneActivate: false,
+      modalVisiblePhonePlayStore: false
     });
   },
-  
+
   onCancelButtonTap() {
     console.log("Cancelar");
     this.setData({
       modalVisible: false,
-      modalVisiblePhoneActivate:false ,
-      modalVisiblePhonePlayStore:false
+      modalVisiblePhoneActivate: false,
+      modalVisiblePhonePlayStore: false
     });
   },
 
@@ -94,29 +129,31 @@ Page({
       url: "/pages/addProduct/addProduct"
     });
   },
-  onAcceptButtonTapPhoneActivate(){
+  onAcceptButtonTapPhoneActivate() {
     my.navigateTo({
-      url: "/pages/MyProducts/ActivatePhone/ActivatePhone?data=" + JSON.stringify(this.data.categoria3)
+      url:
+        "/pages/MyProducts/ActivatePhone/ActivatePhone?data=" +
+        JSON.stringify(this.data.categoria3)
     });
   },
-  onAcceptButtonTapPhonePlayStore(){
+  onAcceptButtonTapPhonePlayStore() {
     my.navigateTo({
       url: "/pages/MyProducts/redirect/redirect"
     });
   },
-  ActiveModal(){
+  ActiveModal() {
     this.setData({
       modalVisible: true
     });
   },
-  onNavigate(){
+  onNavigate() {
     this.setData({
-      modalVisiblePhonePlayStore:true
+      modalVisiblePhonePlayStore: true
     });
   },
-  onNavigateactivatePhone(){
+  onNavigateactivatePhone() {
     this.setData({
-      modalVisiblePhoneActivate:true
+      modalVisiblePhoneActivate: true
     });
   },
   showLoading() {
@@ -128,5 +165,5 @@ Page({
     this.setData({
       showLoading: false
     });
-  },
+  }
 });
