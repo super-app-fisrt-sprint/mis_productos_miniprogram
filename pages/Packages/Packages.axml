@@ -1,0 +1,38 @@
+<view class="container">
+  <view class="container-item header">
+    <view class="NameAccount">
+      {{name}}
+    </view>
+    <view class="Doc">
+      Nit.{{nit}}
+    </view>
+  </view>
+  </view>
+<view class="container">
+  <view class="container-item numberAcc_Des">
+    <view class="descriptionAcc">
+      <image id="icon-phone" mode="scaleToFill" src="/assets/icons/roaming/phone-roaming.svg" />
+      <view style="font-weight: bold;">
+        Número de cuenta
+      </view>
+    </view>
+    <view style="font-weight: bold;">
+      {{umberAccount}}
+    </view>
+  </view>
+</view>
+<view class="text-paquete">
+  paquete
+</view>
+<view a:for="{{categoriaList}}" a:for-index="index" a:for-item="item" class="container-package">
+
+    <view class="descriptionBundle2">
+      <view class="index-container">
+        {{index+1}}
+      </view>
+        <view class="text-dinamic-package">
+          {{item.descripcion}}
+        </view>
+    </view>
+</view>
+
