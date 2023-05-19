@@ -1,5 +1,4 @@
 <view 
-  onTap="onWebView" 
   class="links {{underLine == true ? 'under-line': ''}}" 
   style="{{style}}">
   <view>

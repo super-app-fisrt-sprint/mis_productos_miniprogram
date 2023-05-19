@@ -1,9 +1,16 @@
 {
   "subPackageBuildType": "shared",
   "pages": [
-    "pages/index/index"
+    "pages/MyProducts/MyProducts",
+    "pages/Packages/Packages",
+    "pages/addProduct/addProduct",
+    "pages/MyProducts/redirect/redirect",
+    "pages/MyProducts/ActivatePhone/ActivatePhone"
   ],
   "window": {
-    "defaultTitle": "My App"
+    "defaultTitle": "Mis productos",
+    "titleBarColor": "#121D24",
+    "gestureBack": "YES",
+    "showTitleLoading": "YES"
   }
 }
