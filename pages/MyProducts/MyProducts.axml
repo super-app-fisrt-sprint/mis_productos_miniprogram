@@ -1,5 +1,5 @@
-<view class="container">
-  <view class="container-item header">
+<view class="containerbar">
+  <view class="container-item-bar header">
     <view class="NameAccount">
       {{name}}
     </view>
@@ -171,6 +171,13 @@
     secondaryButtonText="Cerrar"
     onPrimaryButtonTap="onAcceptButtonTapPhonePlayStore"
     onSecondaryButtonTap="onCancelButtonTap"
+  />
+  <modal-accept
+    content="{{descriptionError}}"
+    visible="{{modalVisibleError}}"
+    onClose="{{redirectServices}}"
+    primaryButtonText="Aceptar"
+    onPrimaryButtonTap="{{redirectServices}}"
   />
   <loading-component a:if="{{showLoading}}" />
 </view>
