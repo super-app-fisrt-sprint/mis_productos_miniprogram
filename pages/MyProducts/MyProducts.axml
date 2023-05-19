@@ -7,24 +7,29 @@
       Nit. {{nit}}
     </view>
   </view>
- 
+
 </view>
 <view class="container">
   <view class="container-item numberAcc_Des">
     <view class="descriptionAcc">
-      <image id="icon-phone" mode="scaleToFill" src="/assets/icons/roaming/phone-roaming.svg" />
+      <image id="icon-phone-2" mode="scaleToFill" src="/assets/icons/home.svg" />
       <view style="font-weight: bold;">
         Número de cuenta
       </view>
     </view>
     <view style="font-weight: bold;">
-     {{numberAccount}}
+      {{numberAccount}}
     </view>
   </view>
   <view class="container-Bundle">
     <view class="bundleInternet">
-      <view class="descriptionBundle">
-        <image id="icon-phone" mode="scaleToFill" src="/assets/icons/roaming/phone-roaming.svg" />
+      <view class="descriptionIcon">
+        <view class="text-description icon-position">
+          <image id="icon-phone" mode="scaleToFill" src="/assets/icons/Internet.svg" />
+          <view class="text-static-Icon">
+            Internet
+          </view>
+        </view>
         <view class="text-description">
           <view class="text-dinamic">
             {{DescripctionPlanInternet}}
@@ -42,8 +47,13 @@
 
   <view class="container-Bundle">
     <view class="bundleInternet">
-      <view class="descriptionBundle">
-        <image id="icon-phone" mode="scaleToFill" src="/assets/icons/roaming/phone-roaming.svg" />
+      <view class="descriptionIcon">
+        <view class="text-description icon-position">
+          <image id="icon-phone" mode="scaleToFill" src="/assets/icons/deskphone.svg" />
+          <view class="text-static-Icon">
+            Telefonía
+          </view>
+        </view>
         <view class="text-description">
           <view class="text-dinamic">
             {{DescripctionPlanPhone}}
@@ -51,29 +61,29 @@
           <view a:if="{{!isPhonePlan}}" class="text-static">
             Actualemente no cuentas con este servicio
           </view>
-          <view a:if="{{isPhonePlan}}"class="text-static">
+          <view a:if="{{isPhonePlan}}" class="text-static">
             Llamadas Internacionales
           </view>
         </view>
       </view>
-      <view>
+      <view a:if="{{isPhonePlan}}">
         <arrow-button
           onTap="onNavigateactivatePhone"
           style="background-color: rgb(241, 237, 237); color: #808080; font-weight: bold"
           stateImg={{true}}
-          imgSrc="{{ data.img }}"
+          imgSrc="/assets/icons/wifi_calling.svg"
           iconArrowSrc="/assets/icons/navigateNextBlack.svg"
           dataInfo="{{ data }}"
         >
           Activa tu teléfono virtual
         </arrow-button>
       </view>
-      <view>
+      <view a:if="{{isPhonePlan}}">
         <arrow-button
           onTap="onNavigate"
           style="background-color: rgb(241, 237, 237);color: #808080; font-weight: bold"
           stateImg={{true}}
-          imgSrc="{{ data.img }}"
+          imgSrc="/assets/icons/download.svg"
           iconArrowSrc="/assets/icons/navigateNextBlack.svg"
           dataInfo="{{ data }}"
         >
@@ -88,8 +98,13 @@
 
   <view class="container-Bundle">
     <view class="bundleInternet">
-      <view class="descriptionBundle">
-        <image id="icon-phone" mode="scaleToFill" src="/assets/icons/roaming/phone-roaming.svg" />
+      <view class="descriptionIcon">
+        <view class="text-description icon-position">
+          <image id="icon-phone" mode="scaleToFill" src="/assets/icons/tv.svg" />
+          <view class="text-static-Icon">
+            Televisión
+          </view>
+        </view>
         <view class="text-description">
           <view class="text-dinamic">
             Televisión
@@ -128,34 +143,34 @@
       </view>
     </view>
   </view>
-  
-<modal-accept-cancel
-content="Al ingresar a esta sección podria consumir datos de su plan. ¿Desea continuar?"
-visible="{{modalVisible}}"
-onClose="handleClose"
-primaryButtonText="Aceptar"
-secondaryButtonText="Cerrar"
-onPrimaryButtonTap="onAcceptButtonTap"
-onSecondaryButtonTap="onCancelButtonTap"
-/>
 
-<modal-accept-cancel
-content="Al ingresar a esta sección podria consumir datos de su plan. ¿Desea continuar?"
-visible="{{modalVisiblePhoneActivate}}"
-onClose="handleClose"
-primaryButtonText="Aceptar"
-secondaryButtonText="Cerrar"
-onPrimaryButtonTap="onAcceptButtonTapPhoneActivate"
-onSecondaryButtonTap="onCancelButtonTap"
-/>
-<modal-accept-cancel
-content="Al ingresar a esta sección podria consumir datos de su plan. ¿Desea continuar?"
-visible="{{modalVisiblePhonePlayStore}}"
-onClose="handleClose"
-primaryButtonText="Aceptar"
-secondaryButtonText="Cerrar"
-onPrimaryButtonTap="onAcceptButtonTapPhonePlayStore"
-onSecondaryButtonTap="onCancelButtonTap"
-/>
-<loading-component a:if="{{showLoading}}" />
+  <modal-accept-cancel
+    content="Al ingresar a esta sección podria consumir datos de su plan. ¿Desea continuar?"
+    visible="{{modalVisible}}"
+    onClose="handleClose"
+    primaryButtonText="Aceptar"
+    secondaryButtonText="Cerrar"
+    onPrimaryButtonTap="onAcceptButtonTap"
+    onSecondaryButtonTap="onCancelButtonTap"
+  />
+
+  <modal-accept-cancel
+    content="Al ingresar a esta sección podria consumir datos de su plan. ¿Desea continuar?"
+    visible="{{modalVisiblePhoneActivate}}"
+    onClose="handleClose"
+    primaryButtonText="Aceptar"
+    secondaryButtonText="Cerrar"
+    onPrimaryButtonTap="onAcceptButtonTapPhoneActivate"
+    onSecondaryButtonTap="onCancelButtonTap"
+  />
+  <modal-accept-cancel
+    content="Al ingresar a esta sección podria consumir datos de su plan. ¿Desea continuar?"
+    visible="{{modalVisiblePhonePlayStore}}"
+    onClose="handleClose"
+    primaryButtonText="Aceptar"
+    secondaryButtonText="Cerrar"
+    onPrimaryButtonTap="onAcceptButtonTapPhonePlayStore"
+    onSecondaryButtonTap="onCancelButtonTap"
+  />
+  <loading-component a:if="{{showLoading}}" />
 </view>

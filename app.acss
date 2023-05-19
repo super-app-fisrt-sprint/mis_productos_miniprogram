@@ -23,10 +23,16 @@ page {
 }
 
 
-#icon-phone{
+#icon-phone-2{
  
   width: 25px;
   height: 25px;
+}
+
+#icon-phone{
+ padding-right: 10px;
+  width: 40px;
+  height: 40px;
 }
 
 .descriptionAcc{
@@ -60,6 +66,16 @@ padding-bottom: 10px;
   align-items: center;
   padding-bottom: 20px;
 }
+.descriptionIcon{
+  
+  padding-left: 13px;
+  padding-bottom: 15px;
+  color: red;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
 .btn-MejoraPlan{
   font-weight: bold;
   color: white;
@@ -84,6 +100,12 @@ padding-bottom: 10px;
 
 .text-static{
   color: rgb(95, 95, 95);
+  font-size: 12px;
+}
+
+.text-static-Icon{
+  font-weight: bold;
+  color: rgb(190, 14, 14);
   font-size: 12px;
 }
 

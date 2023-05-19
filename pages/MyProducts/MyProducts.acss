@@ -7,7 +7,9 @@
   padding-top: 60px;
 }
 
-
+.icon-position{
+  padding-right: 10px;
+}
 .header{
   width: 90%;
   background-color:  #f7f7f7;

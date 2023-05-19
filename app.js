@@ -10,7 +10,7 @@ App({
   },
   globalData: {
     tipoCanalID:"10",
-    emai:"evoluciondecanales@gmail.com",
+    email:"evoluciondecanales@gmail.com",
     urlActivate:'https://portalvoz.claro.com.co/',
     nombre:"Sistema Calle telmex Col",
     apellido:"",
