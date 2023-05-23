@@ -17,7 +17,7 @@
       </view>
     </view>
     <view style="font-weight: bold;">
-      {{umberAccount}}
+      {{numberAccount}}
     </view>
   </view>
 </view>

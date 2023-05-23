@@ -1,7 +1,7 @@
 .text-paquete {
 
   color: rgb(192, 191, 191);
-  padding-left: 33px;
+  padding-left: 55px;
   padding-bottom: 5px;
   border-bottom-style: solid;
   border-bottom-color: rgb(185, 179, 177);
