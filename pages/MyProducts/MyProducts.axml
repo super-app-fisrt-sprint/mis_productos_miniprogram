@@ -180,4 +180,5 @@
     onPrimaryButtonTap="{{redirectServices}}"
   />
   <loading-component a:if="{{showLoading}}" />
+  <web-view a:if="{{ isIos }}" src="https://apps.apple.com/co/app/claro-tel%C3%A9fono-virtual/id1445077408" />
 </view>

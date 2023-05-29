@@ -1,10 +1,12 @@
 import { requestApiconsultaSerClienteNew } from "/services/consultaSerClienteNew";
 Page({
   data: {
-    Doc:"NN",
-    redirectServices:"redirectBackServices",
-    descriptionError:"se presentó un error ,intente más tarde.",
-    modalVisibleError:false,
+    isIos: false,
+    system: getApp().globalData.carrier,
+    Doc: "NN",
+    redirectServices: "redirectBackServices",
+    descriptionError: "se presentó un error ,intente más tarde.",
+    modalVisibleError: false,
     showLoading: false,
     name: getApp().globalData.nombre,
     nit: getApp().globalData.DocumentNumber,
@@ -22,18 +24,23 @@ Page({
     urlApiconsultaSerClienteNew:
       "https://apiselfservice.co/api/index.php/v1/soap/consultaSerClienteNew.json"
   },
-  //categoria1 es todo referente a telefonia 
+  //categoria1 es todo referente a telefonia
   //categoria2 es todo referente a Internet
   //categoria3 es todo referente a Television
+  onShow() {
+    this.setData({
+      isIos: false
+    });
+  },
   onLoad() {
-    if(getApp().globalData.DocumentType==1){
+    if (getApp().globalData.DocumentType == 1) {
       this.setData({
-        Doc:"CC",
-      })
-    }else if(getApp().globalData.DocumentType==2){
+        Doc: "CC"
+      });
+    } else if (getApp().globalData.DocumentType == 2) {
       this.setData({
-        Doc:"Nit",
-      })
+        Doc: "Nit"
+      });
     }
     this.showLoading();
     requestApiconsultaSerClienteNew(this.data.urlApiconsultaSerClienteNew, this)
@@ -44,11 +51,11 @@ Page({
           res.data &&
           res.data.error == 0 &&
           res.data.response &&
-          res.data.response.servicioActual&&
-          !res.data.response.mensajeRespuesta.includes("Error")&&
+          res.data.response.servicioActual &&
+          !res.data.response.mensajeRespuesta.includes("Error") &&
           !res.data.response.mensajeRespuesta.includes("La cuenta No Existe")
         ) {
-          console.log("entro")
+          console.log("entro");
           const servicioActual = res.data.response.servicioActual;
           const categoria1 = servicioActual.filter(
             item => item.categoria === "1"
@@ -59,13 +66,23 @@ Page({
           const categoria3 = servicioActual.filter(
             item => item.categoria === "3"
           );
-          if (categoria1 && categoria1 !== null && categoria1 !== undefined && categoria1.length > 0) {
+          if (
+            categoria1 &&
+            categoria1 !== null &&
+            categoria1 !== undefined &&
+            categoria1.length > 0
+          ) {
             this.setData({
               isPhonePlan: true,
               DescripctionPlanPhone: categoria1[0].descripcion
             });
           }
-          if (categoria2 && categoria2 !== null && categoria2 !== undefined&&categoria2.length > 1) {
+          if (
+            categoria2 &&
+            categoria2 !== null &&
+            categoria2 !== undefined &&
+            categoria2.length > 1
+          ) {
             const categoria2primerValor = servicioActual.find(
               item => item.categoria === "2"
             );
@@ -77,15 +94,21 @@ Page({
               DescripctionPlanInternet: primerValorCategoria2
             });
           }
-          if (categoria3 && categoria3 !== null &&categoria3 !== undefined&& categoria3.length > 0) {
+          if (
+            categoria3 &&
+            categoria3 !== null &&
+            categoria3 !== undefined &&
+            categoria3.length > 0
+          ) {
             let primerosValoresCategoria3 = [];
-            if ( categoria3.length >= 2) {
-            primerosValoresCategoria3 = categoria3
-              .slice(0, 2)
-              .map(item => item.descripcion);
-            }else{
+            if (categoria3.length >= 2) {
               primerosValoresCategoria3 = categoria3
-              .map(item => item.descripcion);
+                .slice(0, 2)
+                .map(item => item.descripcion);
+            } else {
+              primerosValoresCategoria3 = categoria3.map(
+                item => item.descripcion
+              );
             }
             this.setData({
               isTvPlan: true,
@@ -93,11 +116,10 @@ Page({
               categoria3: categoria3
             });
           }
-          
         } else {
           this.setData({
-            modalVisibleError:true
-          })
+            modalVisibleError: true
+          });
         }
 
         this.hideLoading();
@@ -109,8 +131,8 @@ Page({
           page: this
         });
         this.setData({
-          modalVisibleError:true
-        })
+          modalVisibleError: true
+        });
         my.alert({
           content: error,
           buttonText: "Cerrar"
@@ -155,9 +177,15 @@ Page({
     });
   },
   onAcceptButtonTapPhonePlayStore() {
-    my.navigateTo({
-      url: "/pages/MyProducts/redirect/redirect"
-    });
+    if (this.data.system == "android") {
+      my.navigateTo({
+        url: "/pages/MyProducts/redirect/redirect"
+      });
+    } else {
+      this.setData({
+        isIos: true
+      });
+    }
   },
   ActiveModal() {
     this.setData({
@@ -186,9 +214,9 @@ Page({
   },
   //cuando se integre arreglar ruta
   redirectBackServices() {
-    console.log("clic")
+    console.log("clic");
     my.reLaunch({
-      url: '/pages/MyProducts/MyProducts'
-    })
-  },
+      url: "/pages/MyProducts/MyProducts"
+    });
+  }
 });
