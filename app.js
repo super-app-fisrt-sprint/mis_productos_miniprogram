@@ -9,6 +9,7 @@ App({
     // options.query == {number:1}
   },
   globalData: {
+    carrier:"android",
     DocumentType:1,//1 es cc ,si es 2 es nit 
     tipoCanalID:"10",
     email:"evoluciondecanales@gmail.com",

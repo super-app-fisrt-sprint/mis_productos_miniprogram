@@ -1,1 +1,2 @@
-<web-view  src="https://play.google.com/store/apps/details?id=net.comtor.claro.softphone" />
+<web-view a:if="{{ isAndroid }}" src="https://play.google.com/store/apps/details?id=net.comtor.claro.softphone" />
+<web-view a:if="{{ isIos }}" src="https://apps.apple.com/co/app/claro-tel%C3%A9fono-virtual/id1445077408" />
