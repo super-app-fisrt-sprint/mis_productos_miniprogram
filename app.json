@@ -1,7 +1,6 @@
 {
   "subPackageBuildType": "shared",
   "pages": [
-    "SImuladorEnvioDatosEntrada/index/index",
     "main/ui/MyProducts/MyProducts",
     "main/ui/MyProducts/redirect/redirect",
     "main/ui/Packages/Packages",
