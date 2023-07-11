@@ -3,17 +3,14 @@ const UserServiceRepository = require("../data/attributes/UserService/repository
 const UserService = require("../data/attributes/UserService/entities/RequestUserService");
 const ServiceCategory = require("../data/attributes/UserService/entities/ResponseServiceCategory");
 
-
-
 async function ApiconsultaSerClienteNew(datainfoUser,deviceSpect) {
   const CategoryService = new ServiceCategory();
   const userServiceRepository = new UserServiceRepository();
-  
+  console.log("on load")
   try {
     //obtenemos info login del storage
-
     const res = await userServiceRepository.getUserServiceRemote(datainfoUser,deviceSpect);
-
+    
     if (
       res &&
       res.data &&

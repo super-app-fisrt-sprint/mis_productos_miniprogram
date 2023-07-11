@@ -70,7 +70,6 @@ Page({
   onShow(){
     const deviceSpect=DeviceSpectViewModel.GetInfoDeviceStorage();
     const datainfoUser=dataLoginViewModel.GetDataLoginInfoStorage();
-    console.log("dara--->",datainfoUser)
     let FirstSecondValueTV = [];
     if (datainfoUser.DocumentType == 1) {
       this.setData({
@@ -81,17 +80,18 @@ Page({
         Doc: "Nit"
       });
     }
-
+    
     this.setData({
       name: datainfoUser.nombre,
       nit: datainfoUser.DocumentNumber,
       numberAccount:datainfoUser.NumberAccount,
     })
     this.showLoading();
+    
     userViewModel
       .ApiconsultaSerClienteNew(datainfoUser,deviceSpect)
       .then(result => {
-        console.log("succes iu--->", result);
+       
         if (result.categoriaTelefonia != null) {
           this.setData({
             isPhonePlan: true,
@@ -149,7 +149,6 @@ Page({
   },
 
   onCancelButtonTap() {
-    console.log("Cancelar");
     this.setData({
       modalVisible: false,
       modalVisiblePhoneActivate: false,
@@ -158,7 +157,6 @@ Page({
   },
 
   onAcceptButtonTap() {
-    console.log("Aceptar");
     my.navigateTo({
       url: "/main/ui/AddProduct/AddProduct"
     });
@@ -202,7 +200,6 @@ Page({
   },
   //cuando se integre arreglar ruta
   redirectBackServices() {
-    console.log("clic");
     my.reLaunch({
       url: "/pages/MyProducts/MyProducts"
     });

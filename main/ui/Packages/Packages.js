@@ -10,7 +10,6 @@ Page({
       statusBarHeight
     });
     const datainfoUser=dataLoginViewModel.GetDataLoginInfoStorage();
-    console.log("dara--->",datainfoUser)
     if(datainfoUser.DocumentType==1){
       this.setData({
         Doc:"CC",
@@ -26,7 +25,6 @@ Page({
       numberAccount:datainfoUser.NumberAccount,
     })
     const categoriaList=JSON.parse(e.categoria);
-    console.log(categoriaList)
     this.setData({
       categoriaList:categoriaList
     })

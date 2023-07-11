@@ -4,12 +4,6 @@ module.exports = class ServiceCategory {
     this.categoriaTelefonia = categoriaTelefonia;
     this.categoriaInternet = categoriaInternet;
     this.categoriaTelevision = categoriaTelevision;
-   
-    if (ServiceCategory.instance) {
-      return User.instance
-    } else {
-      ServiceCategory.instance = this
-    }
   }
     updateParams(params) {
       Object.assign(this, params);

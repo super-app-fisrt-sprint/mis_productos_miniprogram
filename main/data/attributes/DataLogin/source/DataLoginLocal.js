@@ -26,10 +26,8 @@ function CreateDataUserLoginInStorage(key, dataLogin) {
 function GetDataUserLoginInStorage(key) {
   try {
     let res = my.getStorageSync({ key: key });
-    console.log("charge storage 3--->", res);
     return res.data;
   } catch (error) {
-    console.log("charge storage 3--->", error);
     return error;
   }
 }

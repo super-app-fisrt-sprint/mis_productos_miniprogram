@@ -1,6 +1,5 @@
 module.exports.consultaSerClienteNew = consultaSerClienteNew;
 function consultaSerClienteNew(url, data, deviceSpect) {
-  console.log("device spect--->", deviceSpect);
   return new Promise((resolve, reject) => {
     my.request({
       url: url,
