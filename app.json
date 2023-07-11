@@ -1,12 +1,11 @@
 {
   "subPackageBuildType": "shared",
   "pages": [
-    "pages/MyProducts/MyProducts",
-    "pages/Packages/Packages",
-    "pages/addProduct/addProduct",
-    "pages/MyProducts/redirect/redirect",
-    "pages/MyProducts/ActivatePhone/ActivatePhone",
-    "pages/test/test"
+    "SImuladorEnvioDatosEntrada/index/index",
+    "main/ui/MyProducts/MyProducts",
+    "main/ui/MyProducts/redirect/redirect",
+    "main/ui/Packages/Packages",
+    "main/ui/AddProduct/AddProduct"
   ],
   "window": {
     "defaultTitle": "Mis productos",

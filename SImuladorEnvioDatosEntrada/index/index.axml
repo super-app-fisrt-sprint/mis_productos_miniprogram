@@ -1,0 +1,8 @@
+
+<view style="justify-content:center;display:flex;padding-bottom:30px">
+  Simulación de datos de envio
+</view>
+
+
+<button size="default" type="primary" onTap="enviar"> MINIPROGRAM </button>
+

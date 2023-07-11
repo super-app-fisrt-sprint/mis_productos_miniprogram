@@ -1,0 +1,183 @@
+<view class="containerbar">
+  <view class="container-item-bar header">
+    <view class="NameAccount">
+      {{name}}
+    </view>
+    <view class="Doc">
+      {{Doc}}. {{nit}}
+    </view>
+  </view>
+
+</view>
+<view class="container">
+  <view class="container-item numberAcc_Des">
+    <view class="descriptionAcc">
+      <image id="icon-phone-2" mode="scaleToFill" src="/main/ui/assets/icons/home.svg" />
+      <view style="font-weight: bold;">
+        Número de cuenta
+      </view>
+    </view>
+    <view style="font-weight: bold;">
+      {{numberAccount}}
+    </view>
+  </view>
+  <view class="container-Bundle">
+    <view class="bundleInternet">
+      <view class="descriptionIcon">
+        <view class="text-description icon-position">
+          <image id="icon-phone" mode="scaleToFill" src="/main/ui/assets/icons/Internet.svg" />
+          <view class="text-static-Icon">
+            Internet
+          </view>
+        </view>
+        <view class="text-description">
+          <view class="text-dinamic">
+            {{DescripctionPlanInternet}}
+          </view>
+          <view class="text-static">
+            de navegacion
+          </view>
+        </view>
+      </view>
+      <view onTap="ActiveModal" class="btn-MejoraPlan">
+        Mejora tu plan
+      </view>
+    </view>
+  </view>
+
+  <view class="container-Bundle">
+    <view class="bundleInternet">
+      <view class="descriptionIcon">
+        <view class="text-description icon-position">
+          <image id="icon-phone" mode="scaleToFill" src="/main/ui/assets/icons/deskphone.svg" />
+          <view class="text-static-Icon">
+            Telefonía
+          </view>
+        </view>
+        <view class="text-description">
+          <view class="text-dinamic">
+            {{DescripctionPlanPhone}}
+          </view>
+          <view a:if="{{!isPhonePlan}}" class="text-static">
+            Actualemente no cuentas con este servicio
+          </view>
+          <view a:if="{{isPhonePlan}}" class="text-static">
+            Llamadas Internacionales
+          </view>
+        </view>
+      </view>
+      <view a:if="{{isPhonePlan}}">
+        <arrow-button
+          onTap="onNavigateactivatePhone"
+          style="background-color: rgb(241, 237, 237); color: #808080; font-weight: bold"
+          stateImg={{true}}
+          imgSrc="/main/ui/assets/icons/wifi_calling.svg"
+          iconArrowSrc="/main/ui/assets/icons/navigateNextBlack.svg"
+          dataInfo="{{ data }}"
+        >
+          Activa tu teléfono virtual
+        </arrow-button>
+      </view>
+      <view a:if="{{isPhonePlan}}">
+        <arrow-button
+          onTap="onNavigate"
+          style="background-color: rgb(241, 237, 237);color: #808080; font-weight: bold"
+          stateImg={{true}}
+          imgSrc="/main/ui/assets/icons/download.svg"
+          iconArrowSrc="/main/ui/assets/icons/navigateNextBlack.svg"
+          dataInfo="{{ data }}"
+        >
+          Descarga teléfono virtual
+        </arrow-button>
+      </view>
+      <view onTap="ActiveModal" class="btn-MejoraPlan">
+        Mejora tu plan
+      </view>
+    </view>
+  </view>
+
+  <view class="container-Bundle">
+    <view class="bundleInternet">
+      <view class="descriptionIcon">
+        <view class="text-description icon-position">
+          <image id="icon-phone" mode="scaleToFill" src="/main/ui/assets/icons/tv.svg" />
+          <view class="text-static-Icon">
+            Televisión
+          </view>
+        </view>
+        <view class="text-description">
+          <view class="text-dinamic">
+            Televisión
+          </view>
+          <view a:if="{{!isTvPlan}}" class="text-static">
+            Actualemente no cuentas con este servicio
+          </view>
+          <view
+            a:for="{{DescripctionPlantv}}"
+            a:for-index="index"
+            a:for-item="item"
+            if="{{isTvPlan}}"
+          >
+            <view class="text-static">
+              {{item}}
+            </view>
+          </view>
+
+        </view>
+      </view>
+      <view onTap="redirectPaquetesContratados" class="hipertext">
+        <hyperlink-button
+          stateImg="{{true}}"
+          srcImg="/main/ui/assets/icons/navigate_next_black.svg"
+          colorImg="red"
+          sizeImg="25rpx"
+          style="color:rgb(189, 19, 19);"
+          underLine="{{true}}"
+        >
+          ver paquetes contratados
+        </hyperlink-button>
+      </view>
+
+      <view onTap="ActiveModal" class="btn-MejoraPlan">
+        Mejora tu plan
+      </view>
+    </view>
+  </view>
+
+  <modal-accept-cancel
+    content="Al ingresar a esta sección podria consumir datos de su plan. ¿Desea continuar?"
+    visible="{{modalVisible}}"
+    onClose="handleClose"
+    primaryButtonText="Aceptar"
+    secondaryButtonText="Cerrar"
+    onPrimaryButtonTap="onAcceptButtonTap"
+    onSecondaryButtonTap="onCancelButtonTap"
+  />
+
+  <modal-accept-cancel
+    content="Al ingresar a esta sección podria consumir datos de su plan. ¿Desea continuar?"
+    visible="{{modalVisiblePhoneActivate}}"
+    onClose="handleClose"
+    primaryButtonText="Aceptar"
+    secondaryButtonText="Cerrar"
+    onPrimaryButtonTap="onAcceptButtonTapPhoneActivate"
+    onSecondaryButtonTap="onCancelButtonTap"
+  />
+  <modal-accept-cancel
+    content="Al ingresar a esta sección podria consumir datos de su plan. ¿Desea continuar?"
+    visible="{{modalVisiblePhonePlayStore}}"
+    onClose="handleClose"
+    primaryButtonText="Aceptar"
+    secondaryButtonText="Cerrar"
+    onPrimaryButtonTap="onAcceptButtonTapPhonePlayStore"
+    onSecondaryButtonTap="onCancelButtonTap"
+  />
+  <modal-accept
+    content="{{descriptionError}}"
+    visible="{{modalVisibleError}}"
+    onClose="{{redirectServices}}"
+    primaryButtonText="Aceptar"
+    onPrimaryButtonTap="{{redirectServices}}"
+  />
+  <loading-component a:if="{{showLoading}}" />
+</view>

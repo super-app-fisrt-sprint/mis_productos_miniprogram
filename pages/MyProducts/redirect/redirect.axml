@@ -1,1 +1,0 @@
-<web-view a:if="{{ isAndroid }}" src="https://play.google.com/store/apps/details?id=net.comtor.claro.softphone" />
