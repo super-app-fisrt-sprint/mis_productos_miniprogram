@@ -1,5 +1,4 @@
 .header {
-  box-sizing: border-box;
   position: sticky;
   width: 100%;
   top: 0;

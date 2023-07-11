@@ -1,146 +1,147 @@
 <header-image image="../assets/logo-claro-blanco.svg" style="height:{{titleBarHeight + statusBarHeight + 15}}px" />
-<!--<view class="containerbar" ><view class="container-item-bar header"><view class="NameAccount">
-      {{name}}</view><view class="Doc"></view></view></view> -->
+
 <view class="container">
-
-  <view class="container-item ">
-    <view class="descriptionAcc">
-      <view class="container-header-display" style="text-align:left">
-        <text style="font-weight:600">{{name}}</text>
-        <text>{{Doc}}. {{nit}}</text>
-      </view>
-    </view>
-    <view class="container-header-display" style="text-align:right">
-      <text style="font-weight:600">Cuenta</text>
-      <text>{{numberAccount}}</text>
-
-    </view>
-
-  </view>
-  <view class="divider"></view>
-
-  <view class="container-Bundle-text">
-    <text>Mis Productos</text>
-  </view>
-  <view class="container-Bundle">
-    <view class="bundleInternet">
-      <view class="descriptionIcon">
-        <view class="text-description">
-          <view class="icons-display">
-            <image id="icon-phone" mode="scaleToFill" src="/main/ui/assets/icons/icono-globe-ppal.svg" />
-            <view class="text-static-Icon">
-              Internet
-            </view>
-          </view>
-          <view class="text-dinamic">
-            {{DescripctionPlanInternet}}
-          </view>
-          <view class="text-static">
-            Navegación
-          </view>
+  <scroll-view scroll-y={{true}}>
+    <view class="container-item ">
+      <view class="descriptionAcc">
+        <view class="container-header-display" style="text-align:left">
+          <text style="font-weight:600">{{name}}</text>
+          <text>{{Doc}}. {{nit}}</text>
         </view>
       </view>
-      <view onTap="ActiveModal" class="btn-MejoraPlan">
-        Mejora tu plan
+      <view class="container-header-display" style="text-align:right">
+        <text style="font-weight:600">Cuenta</text>
+        <text>{{numberAccount}}</text>
+  
       </view>
+  
     </view>
-  </view>
-
-  <view class="container-Bundle">
-    <view class="bundleInternet">
-      <view class="descriptionIcon">
-        <view class="text-description">
-          <view class="icons-display">
-            <image id="icon-phone" mode="scaleToFill" src="/main/ui/assets/icons/icono-phone-call-ppal.svg" />
-            <view class="text-static-Icon">
-              Voz
-            </view>
-          </view>
-
-          <view class="text-dinamic">
-            {{DescripctionPlanPhone}}
-          </view>
-          <view a:if="{{!isPhonePlan}}" class="text-static">
-            Actualemente no cuentas con este servicio
-          </view>
-          <view a:if="{{isPhonePlan}}" class="text-static">
-            Llamadas Internacionales
-          </view>
-        </view>
-      </view>
-      <view a:if="{{isPhonePlan}}">
-        <arrow-button
-          onTap="onNavigateactivatePhone"
-          style="background-color:#FFFFFF; color: #808080; font-weight: bold;height:70rpx"
-          stateImg={{true}}
-          imgSrc="/main/ui/assets/icons/icono-phone-ppal.svg"
-          iconArrowSrc="/main/ui/assets/icons/navigateNextBlack.svg"
-          dataInfo="{{ data }}"
-        >
-          Activa tu teléfono virtual
-
-        </arrow-button>
-      </view>
-      <view a:if="{{isPhonePlan}}">
-        <arrow-button
-          onTap="onNavigate"
-          style="background-color:#FFFFFF;color: #808080; font-weight: bold;height:70rpx"
-          stateImg={{true}}
-          imgSrc="/main/ui/assets/icons/icono-download-ppal.svg"
-          iconArrowSrc="/main/ui/assets/icons/navigateNextBlack.svg"
-          dataInfo="{{ data }}"
-        >
-          Descarga teléfono virtual
-        </arrow-button>
-      </view>
-      <view onTap="ActiveModal" class="btn-MejoraPlan">
-        Mejora tu plan
-      </view>
+    <view class="divider"></view>
+  
+    <view class="container-Bundle-text">
+      <text>Mis Productos</text>
     </view>
-  </view>
-
-  <view class="container-Bundle">
-    <view class="bundleInternet">
-      <view class="descriptionIcon">
-        <view class="text-description">
-          <view class="icons-display">
-            <image id="icon-phone" mode="scaleToFill" src="/main/ui/assets/icons/icono-tv-ppal.svg" />
-            <view class="text-static-Icon">
-              Televisión
+    <view class="container-Bundle">
+      <view class="bundleInternet">
+        <view class="descriptionIcon">
+          <view class="text-description">
+            <view class="icons-display">
+              <image id="icon-phone" mode="scaleToFill" src="/main/ui/assets/icons/icono-globe-ppal.svg" />
+              <view class="text-static-Icon">
+                Internet
+              </view>
             </view>
-          </view>
-          <view a:if="{{!isTvPlan}}" class="text-static">
-            Actualemente no cuentas con este servicio
-          </view>
-          <view
-            a:for="{{DescripctionPlantv}}"
-            a:for-index="index"
-            a:for-item="item"
-            if="{{isTvPlan}}"
-          >
+            <view class="text-dinamic">
+              {{DescripctionPlanInternet}}
+            </view>
             <view class="text-static">
-              {{item}}
+              Navegación
             </view>
           </view>
-
+        </view>
+        <view onTap="ActiveModal" class="btn-MejoraPlan">
+          Mejora tu plan
         </view>
       </view>
-      <arrow-button
-        onTap="redirectPaquetesContratados"
-        style="background-color: #FFFFFF; color: #808080; font-weight: bold;height:70rpx"
-        stateImg={{true}}
-        imgSrc="/main/ui/assets/icons/icono-archive-ppal.svg"
-        iconArrowSrc="/main/ui/assets/icons/navigateNextBlack.svg"
-        dataInfo="{{ data }}"
-      >
-      Ver paquetes contratados
-      </arrow-button>
-
-      <view onTap="ActiveModal" class="btn-MejoraPlan">
-        Mejora tu plan
+    </view>
+  
+    <view class="container-Bundle">
+      <view class="bundleInternet">
+        <view class="descriptionIcon">
+          <view class="text-description">
+            <view class="icons-display">
+              <image id="icon-phone" mode="scaleToFill" src="/main/ui/assets/icons/icono-phone-call-ppal.svg" />
+              <view class="text-static-Icon">
+                Voz
+              </view>
+            </view>
+  
+            <view class="text-dinamic">
+              {{DescripctionPlanPhone}}
+            </view>
+            <view a:if="{{!isPhonePlan}}" class="text-static">
+              Actualemente no cuentas con este servicio
+            </view>
+            <view a:if="{{isPhonePlan}}" class="text-static">
+              Llamadas Internacionales
+            </view>
+          </view>
+        </view>
+        <view a:if="{{isPhonePlan}}">
+          <arrow-button
+            onTap="onNavigateactivatePhone"
+            style="background-color:#FFFFFF; color: #808080; font-weight: bold;height:70rpx"
+            stateImg={{true}}
+            imgSrc="/main/ui/assets/icons/icono-phone-ppal.svg"
+            iconArrowSrc="/main/ui/assets/icons/navigateNextBlack.svg"
+            dataInfo="{{ data }}"
+          >
+            Activa tu teléfono virtual
+  
+          </arrow-button>
+        </view>
+        <view a:if="{{isPhonePlan}}">
+          <arrow-button
+            onTap="onNavigate"
+            style="background-color:#FFFFFF;color: #808080; font-weight: bold;height:70rpx"
+            stateImg={{true}}
+            imgSrc="/main/ui/assets/icons/icono-download-ppal.svg"
+            iconArrowSrc="/main/ui/assets/icons/navigateNextBlack.svg"
+            dataInfo="{{ data }}"
+          >
+            Descarga teléfono virtual
+          </arrow-button>
+        </view>
+        <view onTap="ActiveModal" class="btn-MejoraPlan">
+          Mejora tu plan
+        </view>
       </view>
     </view>
-  </view>
+  
+    <view class="container-Bundle">
+      <view class="bundleInternet">
+        <view class="descriptionIcon">
+          <view class="text-description">
+            <view class="icons-display">
+              <image id="icon-phone" mode="scaleToFill" src="/main/ui/assets/icons/icono-tv-ppal.svg" />
+              <view class="text-static-Icon">
+                Televisión
+              </view>
+            </view>
+            <view a:if="{{!isTvPlan}}" class="text-static">
+              Actualemente no cuentas con este servicio
+            </view>
+            <view
+              a:for="{{DescripctionPlantv}}"
+              a:for-index="index"
+              a:for-item="item"
+              if="{{isTvPlan}}"
+            >
+              <view class="text-static">
+                {{item}}
+              </view>
+            </view>
+  
+          </view>
+        </view>
+        <arrow-button
+          onTap="redirectPaquetesContratados"
+          style="background-color: #FFFFFF; color: #808080; font-weight: bold;height:70rpx"
+          stateImg={{true}}
+          imgSrc="/main/ui/assets/icons/icono-archive-ppal.svg"
+          iconArrowSrc="/main/ui/assets/icons/navigateNextBlack.svg"
+          dataInfo="{{ data }}"
+        >
+        Ver paquetes contratados
+        </arrow-button>
+  
+        <view onTap="ActiveModal" class="btn-MejoraPlan">
+          Mejora tu plan
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  
 
   <modal-accept-cancel
     descriptionTitle="Al ingresar a esta sección podria consumir datos de su plan. ¿Desea continuar?"
@@ -164,7 +165,7 @@
     onSecondaryButtonTap="onCancelButtonTap"
   />
   <modal-accept-cancel
-    title="¿Descargar teléfono virtual??"
+    title="¿Descargar teléfono virtual?"
     descriptionTitleVisible=true
     descriptionTitle="Al continuar te llevaremos a la tienda de aplicaciones de tu equipo"
     visible="{{modalVisiblePhonePlayStore}}"

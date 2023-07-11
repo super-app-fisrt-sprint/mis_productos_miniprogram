@@ -1,5 +1,4 @@
 .container {
-  padding-top: 30%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -20,19 +19,7 @@
 .icon-position {
   padding-right: 10px;
 }
-.header {
-  padding-left: 20px;
-  justify-content: center;
-  background-color: #fdfdff;
-  position: absolute;
-  z-index: 500;
-  display: flex;
-  flex-direction: row;
-  border-bottom-style: solid;
-  border-bottom-color: rgb(185, 179, 177);
-  border-bottom-width: 2px;
-  margin: 0 auto;
-}
+
 
 .container-item-bar {
   padding-right: 20px;
