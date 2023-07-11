@@ -9,9 +9,6 @@
   color: #F6392C;
 }
 
-.ant-modal-body {
-  width: 370px;
-}
 
 .ant-modal-body-footer-vertical-primary {
   background-color: #F6392C;

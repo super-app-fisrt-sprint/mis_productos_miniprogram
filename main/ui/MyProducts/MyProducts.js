@@ -164,7 +164,7 @@ Page({
   onAcceptButtonTapPhoneActivate() {
     my.navigateTo({
       url:
-        "/pages/MyProducts/ActivatePhone/ActivatePhone?data=" +
+        "/main/ui/MyProducts/ActivatePhone/ActivatePhone?data=" +
         JSON.stringify(this.data.categoria3)
     });
   },
@@ -201,7 +201,7 @@ Page({
   //cuando se integre arreglar ruta
   redirectBackServices() {
     my.reLaunch({
-      url: "/pages/MyProducts/MyProducts"
+      url: "/main/ui/MyProducts/MyProducts"
     });
   }
 });

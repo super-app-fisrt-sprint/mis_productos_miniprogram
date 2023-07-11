@@ -14,10 +14,24 @@
         <icon class="icon" type="InformationCircleOutline" />
       </view>
 
+
       <view class="ant-modal-body-content" slot="content">
-        <slot name="content"> {{content}}</slot>
+        
+        <view class="description-title" a:if="{{ descriptionTitleVisible }}">
+          <text >{{descriptionTitle}}</text>
+        </view>
+         
+
+        <view class="body-content" a:if="{{ contentVisible }}">
+          <slot name="content"> {{content}}</slot>
+        </view>
       </view>
 
+
+     <view class="modal-footer" slot="footer">
+      <button class="modal-button button-accept" onTap="onAcceptButtonTap">{{primaryButtonText}}</button>
+      <button class="modal-button button-cancel" onTap="onCancelButtonTap">{{secondaryButtonText}}</button>
+     </view>
     </modal>
   </view>
 </view>

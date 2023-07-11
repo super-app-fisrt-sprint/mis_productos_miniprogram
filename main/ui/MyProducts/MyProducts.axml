@@ -143,7 +143,7 @@
   </view>
 
   <modal-accept-cancel
-    content="Al ingresar a esta sección podria consumir datos de su plan. ¿Desea continuar?"
+    descriptionTitle="Al ingresar a esta sección podria consumir datos de su plan. ¿Desea continuar?"
     visible="{{modalVisible}}"
     onClose="handleClose"
     primaryButtonText="Aceptar"
@@ -153,7 +153,9 @@
   />
 
   <modal-accept-cancel
-    content="Al ingresar a esta sección podria consumir datos de su plan. ¿Desea continuar?"
+    title="¿Activar teléfono virtual?"
+    descriptionTitleVisible=true
+    descriptionTitle="Esto puede consumir datos de tu plan"
     visible="{{modalVisiblePhoneActivate}}"
     onClose="handleClose"
     primaryButtonText="Aceptar"
@@ -162,7 +164,9 @@
     onSecondaryButtonTap="onCancelButtonTap"
   />
   <modal-accept-cancel
-    content="Al ingresar a esta sección podria consumir datos de su plan. ¿Desea continuar?"
+    title="¿Descargar teléfono virtual??"
+    descriptionTitleVisible=true
+    descriptionTitle="Al continuar te llevaremos a la tienda de aplicaciones de tu equipo"
     visible="{{modalVisiblePhonePlayStore}}"
     onClose="handleClose"
     primaryButtonText="Aceptar"

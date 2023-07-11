@@ -7,7 +7,9 @@
   flex-flow: column wrap;
   align-items: center;
 }
-
+.btn-image{
+  border-radius: 50rpx;
+}
 .container-btns {
   width: 90%;
   height: 20%;

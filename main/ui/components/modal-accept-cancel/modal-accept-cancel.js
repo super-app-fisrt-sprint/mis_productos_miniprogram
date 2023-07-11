@@ -1,6 +1,9 @@
 Component({
   props: {
     title: "",
+    descriptionTitleVisible: true,
+    contentVisible:true,
+    descriptionTitle: "",
     content: "",
     visible: false,
     handleClose: () => {},
@@ -14,8 +17,8 @@ Component({
       this.props.onClose();
     },
     onAcceptButtonTap() {
-      this.handleClose();
       this.props.onPrimaryButtonTap();
+      this.handleClose();
     },
     onCancelButtonTap() {
       this.handleClose();

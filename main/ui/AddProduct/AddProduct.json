@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "generic-button": "/main/ui/components/generic-button/generic-button"
+    "generic-button": "/main/ui/components/generic-button/generic-button",
+    "header-image": "/main/ui/components/headerImage/headerImage"
   },
   "styleIsolation": "apply-shared"
 }

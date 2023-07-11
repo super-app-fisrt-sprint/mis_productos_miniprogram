@@ -1,3 +1,5 @@
+
+<header-image image="../assets/logo-claro-blanco.svg" style="height:{{titleBarHeight + statusBarHeight + 15}}px;width:100%" />
 <view class="container">
   <view class="container-btns">
     <generic-button onTap="onMakePhoneCall" stateImg="{{true}}" imgSrc="/main/ui/assets/icons/phone_msg.svg">Llámanos</generic-button>

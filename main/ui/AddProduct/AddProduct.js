@@ -6,8 +6,10 @@ Page({
     url: "https://www2.claro.com.co/negocios/app/solicitudes/solicitud-producto-generico-nv/?promo=nclaroapp"
   },
   onLoad() {
-    my.setNavigationBar({
-      title: this.data.title
+    const { titleBarHeight, statusBarHeight } = my.getSystemInfoSync();
+    this.setData({
+      titleBarHeight,
+      statusBarHeight
     });
   },
   onMakePhoneCall(e){
