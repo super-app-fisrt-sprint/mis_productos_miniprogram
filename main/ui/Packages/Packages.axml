@@ -1,34 +1,29 @@
-<view class="container">
-  <view class="container-item header">
-    <view class="NameAccount">
-      {{name}}
-    </view>
-    <view class="Doc">
-      {{Doc}}.{{nit}}
-    </view>
-  </view>
-  </view>
-<view class="container">
-  <view class="container-item numberAcc_Des">
+<header-image image="../assets/logo-claro-blanco.svg" style="height:{{titleBarHeight + statusBarHeight + 15}}px;width:100%" />
+<view class="container" style="padding-top: {{titleBarHeight + statusBarHeight + 25}}px">
+  <view class="container-item ">
     <view class="descriptionAcc">
-      <image id="icon-phone" mode="scaleToFill" src="/main/ui/assets/icons/roaming/phone-roaming.svg" />
-      <view style="font-weight: bold;">
-        Número de cuenta
+      <view class="container-header-display" style="text-align:left">
+        <text style="font-weight:600">{{name}}</text>
+        <text>{{Doc}}. {{nit}}</text>
       </view>
     </view>
-    <view style="font-weight: bold;">
-      {{numberAccount}}
+    <view class="container-header-display" style="text-align:right">
+      <text style="font-weight:600">Cuenta</text>
+      <text>{{numberAccount}}</text>
+    
     </view>
-  </view>
+  
+ 
 </view>
-<view class="text-paquete">
-  Paquete
+<view class="divider__amount"></view>
+<view class="text-paquete-packages">
+  Paquetes contratados
 </view>
 <view a:for="{{categoriaList}}" a:for-index="index" a:for-item="item" class="container-package">
 
     <view class="descriptionBundle2">
       <view class="index-container">
-        {{index+1}}
+        {{index+1}}.
       </view>
         <view class="text-dinamic-package">
           {{item.descripcion}}

@@ -34,19 +34,15 @@
 
 .container-package {
   width: 100%;
-  box-shadow: 1px 2px 3px 1px rgba(199, 199, 199, 0.35);
-  background-color: rgb(255, 255, 255);
 }
 .index-container{
-  color: #f7f7f7;
-  font-size: 20px;
+  color: #187385;
+  font-size: 30rpx;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15%;
   height:  100rpx;
-  background-color: rgb(84, 203, 240);
 }
 
 .descriptionBundle2{
@@ -60,9 +56,28 @@
 }
 
 .text-dinamic-package{
-  padding-left: 10px;
+  padding-left: 5px;
   align-items: center;
   color: rgb(95, 95, 95);
-  font-size: 25px;
+  font-size: 30rpx;
   font-weight: bold;
+}
+
+.container-header-display{
+  display:flex;
+  flex-direction:column;
+}
+.divider__amount {
+  margin-top: 20rpx;
+  height: 3rpx;
+  background-color: #ececec;
+  width: 400rpx;
+}
+
+.text-paquete-packages{
+margin:20rpx 0; 
+ color: #404040;
+ text-align: center;
+ font-weight: bold;
+ font-size:40rpx;
 }

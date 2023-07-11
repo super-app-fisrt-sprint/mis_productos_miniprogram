@@ -4,14 +4,11 @@ Page({
     categoriaList:[]
   },
   onLoad(e) {
-    my.getSystemInfo({
-      success: (res) => {
-          console.log(res);
-      },
-      fail: (err) => {
-          console.log(err);
-      }
-  })
+    const { titleBarHeight, statusBarHeight } = my.getSystemInfoSync();
+    this.setData({
+      titleBarHeight,
+      statusBarHeight
+    });
     const datainfoUser=dataLoginViewModel.GetDataLoginInfoStorage();
     console.log("dara--->",datainfoUser)
     if(datainfoUser.DocumentType==1){
