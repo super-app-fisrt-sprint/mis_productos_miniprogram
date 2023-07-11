@@ -1,12 +1,10 @@
 .text-paquete {
-
   color: rgb(192, 191, 191);
   padding-left: 55px;
   padding-bottom: 5px;
   border-bottom-style: solid;
   border-bottom-color: rgb(185, 179, 177);
   border-bottom-width: 1px;
-
 }
 
 .container {
@@ -15,7 +13,6 @@
   margin: 0 auto;
   width: 90%;
 }
-
 
 .btn-arrow {
   width: 95%;
@@ -26,7 +23,6 @@
 .numberAcc_Des {
   padding-top: 60px;
 }
-
 
 .header {
   width: 90%;
@@ -43,17 +39,17 @@
 .container-package {
   width: 100%;
 }
-.index-container{
+.index-container {
   color: #187385;
   font-size: 30rpx;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  height:  100rpx;
+  height: 100rpx;
 }
 
-.descriptionBundle2{
+.descriptionBundle2 {
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -63,7 +59,7 @@
   border-bottom-width: 1px;
 }
 
-.text-dinamic-package{
+.text-dinamic-package {
   padding-left: 5px;
   align-items: center;
   color: rgb(95, 95, 95);
@@ -71,25 +67,23 @@
   font-weight: bold;
 }
 
-.container-header-display{
-  display:flex;
-  flex-direction:column;
+.container-header-display {
+  display: flex;
+  flex-direction: column;
 }
 .divider__amount {
   margin-top: 20rpx;
   height: 3rpx;
   background-color: #ececec;
-  width: 400rpx;
 }
 
-.text-paquete-packages{
-margin:20rpx 0; 
- color: #404040;
- text-align: center;
- font-weight: bold;
- font-size:40rpx;
+.text-paquete-packages {
+  margin: 20rpx 0;
+  color: #404040;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40rpx;
 }
-
 
 .container-item {
   display: flex;
@@ -110,7 +104,6 @@ margin:20rpx 0;
   align-items: center;
   gap: 15rpx;
 }
-
 
 .bundleInternet {
   display: flex;
