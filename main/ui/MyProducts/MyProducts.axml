@@ -1,15 +1,6 @@
 <header-image image="../assets/logo-claro-blanco.svg" style="height:{{titleBarHeight + statusBarHeight + 15}}px" />
-<!-- <view class="containerbar" >
-  <view class="container-item-bar header">
-    <view class="NameAccount">
-      {{name}}
-    </view>
-    <view class="Doc">
-      
-    </view>
-  </view>
-
-</view> -->
+<!--<view class="containerbar" ><view class="container-item-bar header"><view class="NameAccount">
+      {{name}}</view><view class="Doc"></view></view></view> -->
 <view class="container" style="padding-top: {{titleBarHeight + statusBarHeight + 25}}px">
 
   <view class="container-item ">
@@ -22,8 +13,14 @@
     <view class="container-header-display" style="text-align:right">
       <text style="font-weight:600">Cuenta</text>
       <text>{{numberAccount}}</text>
-    
+
     </view>
+
+  </view>
+  <view class="divider"></view>
+
+  <view class="container-Bundle-text">
+    <text>Mis Productos</text>
   </view>
   <view class="container-Bundle">
     <view class="bundleInternet">
@@ -53,13 +50,13 @@
     <view class="bundleInternet">
       <view class="descriptionIcon">
         <view class="text-description">
-           <view class="icons-display">
+          <view class="icons-display">
             <image id="icon-phone" mode="scaleToFill" src="/main/ui/assets/icons/icono-phone-call-ppal.svg" />
             <view class="text-static-Icon">
-            Telefonía
+              Voz
             </view>
-           </view>
-       
+          </view>
+
           <view class="text-dinamic">
             {{DescripctionPlanPhone}}
           </view>
@@ -81,6 +78,7 @@
           dataInfo="{{ data }}"
         >
           Activa tu teléfono virtual
+
         </arrow-button>
       </view>
       <view a:if="{{isPhonePlan}}">
@@ -106,11 +104,11 @@
       <view class="descriptionIcon">
         <view class="text-description">
           <view class="icons-display">
-          <image id="icon-phone" mode="scaleToFill" src="/main/ui/assets/icons/icono-tv-ppal.svg" />
-          <view class="text-static-Icon">
-            Televisión
+            <image id="icon-phone" mode="scaleToFill" src="/main/ui/assets/icons/icono-tv-ppal.svg" />
+            <view class="text-static-Icon">
+              Televisión
+            </view>
           </view>
-        </view>
           <view class="text-dinamic">
             Televisión
           </view>
@@ -131,16 +129,16 @@
         </view>
       </view>
       <arrow-button
-          onTap="redirectPaquetesContratados"
-          style="background-color: #FFFFFF; color: #808080; font-weight: bold;height:70rpx"
-          stateImg={{true}}
-          imgSrc="/main/ui/assets/icons/icono-archive-ppal.svg"
-          iconArrowSrc="/main/ui/assets/icons/navigateNextBlack.svg"
-          dataInfo="{{ data }}"
-        >
-          Activa tu teléfono virtual
-        </arrow-button>
-    
+        onTap="redirectPaquetesContratados"
+        style="background-color: #FFFFFF; color: #808080; font-weight: bold;height:70rpx"
+        stateImg={{true}}
+        imgSrc="/main/ui/assets/icons/icono-archive-ppal.svg"
+        iconArrowSrc="/main/ui/assets/icons/navigateNextBlack.svg"
+        dataInfo="{{ data }}"
+      >
+        Activa tu teléfono virtual
+      </arrow-button>
+
       <view onTap="ActiveModal" class="btn-MejoraPlan">
         Mejora tu plan
       </view>

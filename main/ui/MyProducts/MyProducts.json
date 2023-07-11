@@ -1,11 +1,11 @@
 {
   "usingComponents": {
-    
     "header-image": "/main/ui/components/headerImage/headerImage",
     "hyperlink-button": "/main/ui/components/hyperlink-button/hyperlink-button",
     "arrow-button": "/main/ui/components/arrow-button/arrow-button",
-    "modal-accept-cancel" :"/main/ui/components/modal-accept-cancel/modal-accept-cancel",
-    "modal-accept" :"/main/ui/components/modal-accept/modal-accept",
+    "modal-accept-cancel": "/main/ui/components/modal-accept-cancel/modal-accept-cancel",
+    "modal-accept": "/main/ui/components/modal-accept/modal-accept",
+    "icon": "antd-mini/es/Icon/index",
     "loading-component": "/main/ui/components/loading-component/loading-component"
   },
   "styleIsolation": "apply-shared"

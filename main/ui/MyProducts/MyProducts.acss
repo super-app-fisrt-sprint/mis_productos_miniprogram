@@ -1,77 +1,129 @@
-.btn-arrow{
+.btn-arrow {
+  justify-content: center;
   width: 95%;
-  min-height: 9rpx;
+  height: 40rpx;
   margin-bottom: 10px;
 }
 
-.icon-position{
+.icon-position {
   padding-right: 10px;
 }
-.header{
+.header {
   padding-left: 20px;
   justify-content: center;
-  background-color:  #f7f7f7;
+  background-color: #f7f7f7;
   position: absolute;
   z-index: 500;
   display: flex;
   flex-direction: row;
   border-bottom-style: solid;
   border-bottom-color: rgb(185, 179, 177);
-  border-bottom-width:2px;
+  border-bottom-width: 2px;
   margin: 0 auto;
-  }
-  
-  .container-item-bar{
-    padding-right: 20px;
-    display: flex;
-    width: 90%;
-    justify-content: space-between;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
+}
 
-  .ant-modal-body{
-    position: relative;
-    z-index: 999;
-  }
+.container-item-bar {
+  padding-right: 20px;
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
-  .ant-modal-body-content{
-    color: rgb(59, 58, 58);
-  }
+.ant-modal-body {
+  position: relative;
+  z-index: 999;
+}
 
-  .container-header-display{
-    display:flex;
-    flex-direction:column;
-  }
-  .icons-display{
-    display:flex;
-    flex-direction:row;
-  }
+.ant-modal-body-content {
+  color: rgb(59, 58, 58);
+}
 
-  .btn-MejoraPlan{
-    margin: 0 auto;
-    font-weight: bold;
-    color: white;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    flex-direction: row;
-    align-items: center;
-    gap: 15rpx;
-    width: 75%;
-    height:45px;
-    border-radius: 30px;
-    background-color:rgb(189, 19, 19);
-  }
+.container-header-display {
+  display: flex;
+  flex-direction: column;
+}
+.icons-display {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
-  
-#icon-phone{
+.btn-MejoraPlan {
+  margin: 0 auto;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 15rpx;
+  width: 75%;
+  height: 45px;
+  border-radius: 30px;
+  background-color: rgb(189, 19, 19);
+}
+
+#icon-phone {
   padding-right: 10px;
-   width: 40rpx;
-   height: 40rpx;
- }
- .btn-arrow .a-image {
   width: 40rpx;
   height: 40rpx;
+}
+.btn-arrow .a-image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.container-Bundle-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 45rpx;
+  color: #404040;
+  padding: 45rpx 0;
+}
+
+.divider {
+  margin-top: 20rpx;
+  height: 3rpx;
+  background-color: #ececec;
+  width: 100%;
+}
+.container-Bundle {
+  margin-top: 30rpx;
+}
+
+.text-static-Icon {
+  font-weight: bold;
+  color: #2d2d2d;
+  font-size: 30rpx;
+  padding-left: 20rpx;
+}
+.container-btn-arrow {
+  display: flex;
+}
+
+.text-dinamic {
+  margin-left: 60rpx;
+  padding-top: 30rpx;
+  padding-bottom: 5rpx;
+  color: #187385;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.text-static {
+  padding-top: 2rpx;
+  margin-left: 60rpx;
+  color: #404040;
+  font-size: 12px;
+}
+
+.redirect-icon {
+  color: #187385;
+  font-size: medium;
+  font-weight: bold;
+  border: 1px red solid;
 }

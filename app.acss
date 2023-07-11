@@ -1,21 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
 page {
   background: #f7f7f7;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 :root {
-  --claro-color: #E52A1B;
+  --claro-color: #e52a1b;
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   width: 90%;
-  
 }
 
-.container-item{
+.container-item {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -23,22 +26,19 @@ page {
   padding-bottom: 10px;
 }
 
-
-#icon-phone-2{
- 
+#icon-phone-2 {
   width: 25px;
   height: 25px;
 }
 
-
-.descriptionAcc{
+.descriptionAcc {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 15rpx;
 }
 
-.container-Bundle{
+.container-Bundle {
   margin-bottom: 10px;
   width: 100%;
   border-radius: 10px;
@@ -46,54 +46,37 @@ page {
   background-color: rgb(255, 255, 255);
 }
 
-.bundleInternet{
-display: flex;
-flex-direction: column;
-margin: 0 auto;
-width: 95%;
-padding-top: 30px;
-padding-bottom: 10px;
+.bundleInternet {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 95%;
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
 
-.descriptionBundle{
+.descriptionBundle {
   display: flex;
   padding-left: 13px;
   flex-direction: row;
   align-items: center;
   padding-bottom: 20px;
 }
-.descriptionIcon{
-  
+.descriptionIcon {
   padding-left: 13px;
   padding-bottom: 15px;
   color: red;
   display: flex;
   flex-direction: row;
   align-items: center;
-  
-}
-
-.text-dinamic{
-  margin-left: 60rpx;
-  padding-bottom: 5px;
-  color: rgb(95, 95, 95);
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.text-static{
-  margin-left: 60rpx;
-  color: rgb(95, 95, 95);
-  font-size: 12px;
-}
-
-.text-static-Icon{
-  font-weight: bold;
-  color: rgb(190, 14, 14);
-  font-size: 12px;
 }
 
 
-.hipertext{
+
+
+
+
+
+.hipertext {
   padding-bottom: 10px;
 }

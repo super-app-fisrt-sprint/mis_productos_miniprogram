@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "antd-mini": "^1.8.0",
+    "antd-mini": "^1.9.4",
     "js-base64": "^3.7.5",
     "text-encoding": "^0.7.0"
   }
