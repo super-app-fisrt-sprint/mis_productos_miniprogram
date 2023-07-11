@@ -1,5 +1,7 @@
 {
   "usingComponents": {
+    
+    "header-image": "/main/ui/components/headerImage/headerImage",
     "hyperlink-button": "/main/ui/components/hyperlink-button/hyperlink-button",
     "arrow-button": "/main/ui/components/arrow-button/arrow-button",
     "modal-accept-cancel" :"/main/ui/components/modal-accept-cancel/modal-accept-cancel",

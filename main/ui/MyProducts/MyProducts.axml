@@ -1,4 +1,5 @@
-<view class="containerbar">
+<header-image image="../assets/logo-claro-blanco.svg" style="height:{{titleBarHeight + statusBarHeight + 15}}px" />
+<!-- <view class="containerbar" >
   <view class="container-item-bar header">
     <view class="NameAccount">
       {{name}}
@@ -8,9 +9,10 @@
     </view>
   </view>
 
-</view>
-<view class="container">
-  <view class="container-item numberAcc_Des">
+</view> -->
+<view class="container" style="padding-top: {{titleBarHeight + statusBarHeight + 25}}px">
+
+  <view class="container-item ">
     <view class="descriptionAcc">
       <image id="icon-phone-2" mode="scaleToFill" src="/main/ui/assets/icons/home.svg" />
       <view style="font-weight: bold;">

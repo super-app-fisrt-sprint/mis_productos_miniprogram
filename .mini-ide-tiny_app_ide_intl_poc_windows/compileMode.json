@@ -1,0 +1,9 @@
+{
+  "modes": [
+    {
+      "title": "myProduct",
+      "page": "main/ui/MyProducts/MyProducts",
+      "pageQuery": ""
+    }
+  ]
+}

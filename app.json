@@ -8,9 +8,11 @@
     "main/ui/AddProduct/AddProduct"
   ],
   "window": {
-    "defaultTitle": "Mis productos",
+    "defaultTitle": "",
     "titleBarColor": "#121D24",
     "gestureBack": "YES",
+    "transparentTitle": "always",
+    "responsive": true,
     "showTitleLoading": "YES"
   }
 }
