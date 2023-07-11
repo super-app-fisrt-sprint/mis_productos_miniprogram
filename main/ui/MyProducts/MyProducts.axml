@@ -109,9 +109,6 @@
               Televisión
             </view>
           </view>
-          <view class="text-dinamic">
-            Televisión
-          </view>
           <view a:if="{{!isTvPlan}}" class="text-static">
             Actualemente no cuentas con este servicio
           </view>
