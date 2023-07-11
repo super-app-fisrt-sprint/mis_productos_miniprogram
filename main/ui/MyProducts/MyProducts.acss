@@ -38,3 +38,40 @@
   .ant-modal-body-content{
     color: rgb(59, 58, 58);
   }
+
+  .container-header-display{
+    display:flex;
+    flex-direction:column;
+  }
+  .icons-display{
+    display:flex;
+    flex-direction:row;
+  }
+
+  .btn-MejoraPlan{
+    margin: 0 auto;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 15rpx;
+    width: 75%;
+    height:45px;
+    border-radius: 30px;
+    background-color:rgb(189, 19, 19);
+  }
+
+  
+#icon-phone{
+  padding-right: 10px;
+   width: 40rpx;
+   height: 40rpx;
+ }
+ .btn-arrow .a-image {
+  width: 40rpx;
+  height: 40rpx;
+}
