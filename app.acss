@@ -3,7 +3,7 @@
 }
 
 page {
-  background: #f7f7f7;
+  background: #FDFDFF;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -11,72 +11,4 @@ page {
   --claro-color: #e52a1b;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 90%;
-}
 
-.container-item {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-#icon-phone-2 {
-  width: 25px;
-  height: 25px;
-}
-
-.descriptionAcc {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 15rpx;
-}
-
-.container-Bundle {
-  margin-bottom: 10px;
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 1px 2px 3px 1px rgba(0.2, 0.2, 0.2, 0.35);
-  background-color: rgb(255, 255, 255);
-}
-
-.bundleInternet {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 95%;
-  padding-top: 30px;
-  padding-bottom: 10px;
-}
-
-.descriptionBundle {
-  display: flex;
-  padding-left: 13px;
-  flex-direction: row;
-  align-items: center;
-  padding-bottom: 20px;
-}
-.descriptionIcon {
-  padding-left: 13px;
-  padding-bottom: 15px;
-  color: red;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-
-
-
-
-
-
-.hipertext {
-  padding-bottom: 10px;
-}

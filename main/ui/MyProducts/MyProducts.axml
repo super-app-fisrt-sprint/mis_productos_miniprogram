@@ -136,7 +136,7 @@
         iconArrowSrc="/main/ui/assets/icons/navigateNextBlack.svg"
         dataInfo="{{ data }}"
       >
-        Activa tu teléfono virtual
+      Ver paquetes contratados
       </arrow-button>
 
       <view onTap="ActiveModal" class="btn-MejoraPlan">
